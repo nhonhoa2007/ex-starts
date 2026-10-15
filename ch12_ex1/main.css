@@ -84,7 +84,6 @@ br {
     clear: both;
 }
 
-/* the styles for the table header and footer */
 #cart_header th {
     border-bottom: 2px solid black;
 }
@@ -92,7 +91,7 @@ br {
     text-align: right;
     border-top: 2px solid black;
 }
-/* the styles for the classes */
+
 .right {
     text-align: right;
 }

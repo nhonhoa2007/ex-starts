@@ -1,4 +1,4 @@
-/* the styles for the HTML elements */
+
 html {
     background-color: rgb(192, 192, 192);
 }
@@ -42,7 +42,7 @@ li {
 }
 a {
     color: rgb(41, 64, 124);
-    font-weight: bold;    
+    font-weight: bold;
 }
 a:hover {
     color: rgb(208, 133, 4);
