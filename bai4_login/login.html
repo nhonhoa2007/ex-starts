@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+function empty() {
+    $("#nt").hide();
+}
+
+function doLogin(u, p){
+    $.get(
+        "check.php",
+        {user: u, pass: p},
+        function(data){
+            $('#nt').css("display","block");
+            $("#nt").slideDown("slow");
+            $("#nt").html(data);
+        }
+    );
+}
+
+$(document).ready(function(){
+    $("#sm").click(function(event){
+        doLogin($("#us").val(), $("#pw").val());
+    });
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var u = urlParams.get('user');
+    var p = urlParams.get('pass');
+    if(u && p){
+        $("#us").val(u);
+        $("#pw").val(p);
+        doLogin(u, p);
+    }
+});
+</script>
+<style>
+body{margin: 80px auto; width: 420px; font:normal 14pt Arial; color:navy;}
+input{border:solid 1px silver; padding:3px; font:normal 14pt Arial; color:blue;padding: 3px 5px}
+fieldset{border:solid 2px green; border-radius:8px; width:360px; background-color:#DAFEF3; padding: 15px;}
+div#nt{width:360px; border:solid 1px silver; padding: 10px 15px; font:normal 14pt Arial; color:green; background-color:yellow; box-shadow: 2px 2px black; margin-top: 15px;}
+legend{color:red; font-weight: bold;}
+input[type=button]{float:right;padding:5px 10px; cursor: pointer;}
+table{width: 100%;}
+.logo{font-size: 18pt; font-weight: bold; color: #1a4f9c; margin-bottom: 5px;}
+</style>
+</head>
+<body>
+<fieldset>
+<div class="logo">VKU UNIVERSITY</div>
+<hr>
+<legend><b>LOGIN</b></legend>
+<table>
+<tr>
+    <td style="width:35%">User name</td>
+    <td style="width:65%">
+        <input type="text" id="us" onFocus="empty();">
+    </td>
+</tr>
+<tr>
+    <td>Password</td>
+    <td>
+        <input type="password" id="pw">
+    </td>
+</tr>
+<tr>
+    <td colspan="2">
+        <br>
+        <input id="sm" type="button" value="Submit">
+    </td>
+</tr>
+</table>
+</fieldset>
+<br>
+<div id="nt" style="display:none;">Notice:</div>
+</body>
+</html>

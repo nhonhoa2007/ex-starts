@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 25px;
+}
+h1 {
+    font-size: 32pt;
+    font-weight: bold;
+    color: #1a4f9c;
+    text-shadow: 2px 2px 0px #ff0055, 4px 4px 0px #ff88aa;
+    margin: 0 0 15px 0;
+}
+select {
+    padding: 6px 12px;
+    font-size: 11pt;
+    border: 1px solid #999;
+}
+#info {
+    margin-top: 15px;
+    background-color: #ffd6d6;
+    padding: 15px 20px;
+    border-radius: 4px;
+    display: inline-block;
+}
+#info h3 {
+    margin: 0 0 10px 0;
+    color: #000;
+    font-size: 14pt;
+}
+table {
+    border-collapse: collapse;
+    background-color: #ffffff;
+    min-width: 550px;
+}
+th, td {
+    border: 1px solid #666;
+    padding: 6px 12px;
+    font-size: 11pt;
+}
+th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
